@@ -38,5 +38,7 @@ down and up
 
 show tables;
 
+docker exec ubuntu_def1 ping ip
+
 
 

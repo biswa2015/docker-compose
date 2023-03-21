@@ -1,0 +1,43 @@
+version: '3'
+services:
+  ubuntu_network1:
+    build: .
+    container_name: ubuntu_net1
+    command: tail -f /dev/null
+    networks:
+      default:
+        ipv4_address: 172.17.0.2
+        
+  ubuntu_network2:
+    build: .
+    container_name: ubuntu_net2
+    command: tail -f /dev/null
+    networks:
+      default:
+        ipv4_address: 172.17.0.3
+
+  ubuntu_default1:
+    build: .
+    container_name: ubuntu_def1
+    command: tail -f /dev/null
+    networks:
+      network1:
+        ipv4_address: 172.18.0.2
+
+  ubuntu_default2:
+    build: .
+    container_name: ubuntu_def2
+    command: tail -f /dev/null
+    networks:
+      network1:
+        ipv4_address: 172.18.0.3
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 172.17.0.0/16
+  network1:
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
