@@ -1,0 +1,5 @@
+version: '3'
+services:
+  ubuntunode:
+    image: ubuntu
+    command: echo "From v1-docker-compose"

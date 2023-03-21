@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  ubuntunode_1:
+    image: ubuntu
+    command: echo "From ubuntunode_1"
+
+  ubuntunode_2:
+    image: ubuntu
+    command: echo "From ubuntunode_2"
